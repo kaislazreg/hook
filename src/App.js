@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState } from "react";
+
+import { moviesData } from "./comp/Data";
+import { Movielist } from "./Movielist";
+import Add from "./comp/Add";
 
 function App() {
+  const [MovieData, setMovieData] = useState(moviesData);
+  // ici on va debuter les fonctions
+  const handledelete = (ID) => {
+    setMovieData(MovieData.filter((e) => e.id !== ID));
+  };
+  const handleseen = (ID) => {
+    console.log(handleseen);
+    setMovieData(
+      MovieData.map((e) => (e.id !== ID ? { ...e, seen: !e.seen } : { e }))
+    );
+  };
+  const addFilm = (newMovie) => {
+    setMovieData([...MovieData, newMovie]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Movielist
+        MovieData={MovieData}
+        handledelete={handledelete}
+        handleseen={handleseen}
+      />
+      <Add addFilm={addFilm} />
     </div>
   );
 }
