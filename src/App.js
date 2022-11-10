@@ -14,7 +14,7 @@ function App() {
   const handleseen = (ID) => {
     console.log(handleseen);
     setMovieData(
-      MovieData.map((e) => (e.id !== ID ? { ...e, seen: !e.seen } : { e }))
+      MovieData.map((e) => (e.id == ID ? { ...e, seen: !e.seen } : { ...e }))
     );
   };
   const addFilm = (newMovie) => {
