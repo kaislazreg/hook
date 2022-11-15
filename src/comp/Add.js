@@ -7,7 +7,7 @@ const Add = ({ addFilm }) => {
   const [description, setDescription] = useState("");
   return (
     <div>
-      <h1>Titre</h1>
+      <h1>add your movies here</h1>
       <input
         placeholder="name"
         type="text"

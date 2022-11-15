@@ -1,9 +1,16 @@
 import "./App.css";
 import React, { useState } from "react";
+import {Route, Routes} from 'react-router-dom';
 
 import { moviesData } from "./comp/Data";
 import { Movielist } from "./Movielist";
 import Add from "./comp/Add";
+import  Navbar  from "./Navbar";
+import Contact from "./Contact";
+import Footer from "./comp/Footer";
+import Trailer from "./Trailer";
+
+
 
 function App() {
   const [MovieData, setMovieData] = useState(moviesData);
@@ -23,12 +30,24 @@ function App() {
 
   return (
     <div className="App">
-      <Movielist
-        MovieData={MovieData}
+      
+      <Navbar />
+      
+      
+      <Routes>
+        <Route path="/" element={<Movielist MovieData={MovieData}
         handledelete={handledelete}
-        handleseen={handleseen}
-      />
-      <Add addFilm={addFilm} />
+        handleseen={handleseen} />} />
+        <Route path="/contact" element={<Contact/>} />
+        <Route path="/add" element={<Add/>} />
+        <Route path='/trailer/:id' element={<Trailer/>} />
+
+      </Routes>
+
+      <Footer/>
+      
+      
+      
     </div>
   );
 }

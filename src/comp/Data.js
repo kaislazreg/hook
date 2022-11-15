@@ -1,8 +1,7 @@
 export const moviesData = [
     {
       id: Math.random(),
-      image:
-        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.allocine.fr%2Ffilm%2Ffichefilm_gen_cfilm%3D286066.html&psig=AOvVaw3ZkrMyYF6MWo6vzgyEOML4&ust=1667585872577000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCKj9qJqxkPsCFQAAAAAdAAAAABAO",
+      image: "https://lumiere-a.akamaihd.net/v1/images/internalarticle-mobile2_de707e48.jpeg?region=0,0,640,381",
       rating: 5,
       seen: false,
       name: "Star Wars: The Rise Of Skywalker",

@@ -5,9 +5,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Film = ({ Movie, handledelete, handleseen }) => {
   return (
-    <div>
+    <div className="card">
       <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={Movie.image} />
+        <Card.Img className="imgcard" variant="top" src={Movie.image} />
         <Card.Body>
           <Card.Title>{Movie.name}</Card.Title>
           <Card.Title>{Movie.date}</Card.Title>
@@ -18,7 +18,7 @@ const Film = ({ Movie, handledelete, handleseen }) => {
           </button>
           <Button variant="primary" onClick={() => handledelete(Movie.id)}>
             delete
-          </Button>
+          </Button>         
         </Card.Body>
       </Card>
     </div>
